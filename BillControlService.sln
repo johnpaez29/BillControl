@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BillControlService", "BillControlService\BillControlService.csproj", "{4415260A-AC4B-4A82-B924-13DB79A04EE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{1AB08269-A337-43C7-859D-8615FEB2B1B7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4415260A-AC4B-4A82-B924-13DB79A04EE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4415260A-AC4B-4A82-B924-13DB79A04EE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4415260A-AC4B-4A82-B924-13DB79A04EE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4415260A-AC4B-4A82-B924-13DB79A04EE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AB08269-A337-43C7-859D-8615FEB2B1B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AB08269-A337-43C7-859D-8615FEB2B1B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AB08269-A337-43C7-859D-8615FEB2B1B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AB08269-A337-43C7-859D-8615FEB2B1B7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9D48A095-7977-4B63-9908-3239F6D6629B}
+	EndGlobalSection
+EndGlobal
