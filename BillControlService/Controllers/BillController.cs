@@ -81,7 +81,7 @@ namespace BillControlService.Controllers
         {
             try
             {
-                if (TryValidateModel(bill))
+                if (TryValidateModel(bill) && !string.IsNullOrWhiteSpace(bill.Id))
                 {
                     _serviceData.Update(bill);
                     return Ok(new { message = "Bill succesfully updated" });
