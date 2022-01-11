@@ -23,7 +23,8 @@ namespace DataAccess
             {
                 Id = dbBill.Key,
                 Name = dbBill.Object.Name,
-                Months = dbBill.Object.Months
+                Months = dbBill.Object.Months,
+                PayDay = dbBill.Object.PayDay
             });
 
             return bills;

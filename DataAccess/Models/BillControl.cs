@@ -12,17 +12,20 @@ namespace DataAccess.Models
         [Required]
         public string Name { get; set; }
 
+
         [Required]
+        public int PayDay { get; set; }
+
+        public string State { get; set; }
+
         public IEnumerable<MonthControl> Months { get; set; }
 
     }
 
     public class MonthControl
     {
-        [Required]
         public string Name { get; set; }
 
-        [Required]
         public bool IsPaid { get; set; }
     }
 }

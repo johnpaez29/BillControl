@@ -1,3 +1,4 @@
+using BillBusiness.Handlers;
 using DataAccess;
 using DataAccess.Models;
 using Microsoft.AspNetCore.Builder;
@@ -27,11 +28,19 @@ namespace BillControlService
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(service => service.AddPolicy("Policy", builder => 
+            {
+                builder.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader();
+            }));
+
             services.AddControllers();
 
             AppSettings.ConnectionString = Configuration.GetConnectionString("dbFirebase");
 
-            services.AddScoped<IServiceData<BillControl>, BillServiceData>();
+            services.AddScoped<IServiceData<BillControl>, BillServiceData>()
+                .AddScoped<IBillHandler, BillHandler>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,6 +50,8 @@ namespace BillControlService
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors("Policy");
 
             app.UseHttpsRedirection();
 

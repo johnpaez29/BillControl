@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BillControlService", "BillControlService\BillControlService.csproj", "{4415260A-AC4B-4A82-B924-13DB79A04EE5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BillControlService", "BillControlService\BillControlService.csproj", "{4415260A-AC4B-4A82-B924-13DB79A04EE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{1AB08269-A337-43C7-859D-8615FEB2B1B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{1AB08269-A337-43C7-859D-8615FEB2B1B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BillBusiness", "BillBusiness\BillBusiness.csproj", "{F8FCEBF0-F60C-44CC-AF33-97FADE0C3D42}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{1AB08269-A337-43C7-859D-8615FEB2B1B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AB08269-A337-43C7-859D-8615FEB2B1B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AB08269-A337-43C7-859D-8615FEB2B1B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8FCEBF0-F60C-44CC-AF33-97FADE0C3D42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8FCEBF0-F60C-44CC-AF33-97FADE0C3D42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8FCEBF0-F60C-44CC-AF33-97FADE0C3D42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8FCEBF0-F60C-44CC-AF33-97FADE0C3D42}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

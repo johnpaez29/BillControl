@@ -1,7 +1,7 @@
-﻿using DataAccess;
+﻿using BillBusiness.Handlers;
+using DataAccess;
 using DataAccess.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,10 +14,12 @@ namespace BillControlService.Controllers
     public class BillController : Controller
     {
         private readonly IServiceData<BillControl> _serviceData;
+        private readonly IBillHandler _billHandler;
 
-        public BillController(IServiceData<BillControl> serviceData)
+        public BillController(IServiceData<BillControl> serviceData, IBillHandler billHandler)
         {
             _serviceData = serviceData;
+            _billHandler = billHandler;
         }
         public IActionResult Index()
         {
@@ -31,8 +33,8 @@ namespace BillControlService.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var bill = _serviceData.GetById(id);
-                    return await bill;
+                    var bill = await _serviceData.GetById(id);
+                    return bill;
                 }
 
                 return BadRequest(new { message = "validate request error" });
@@ -44,16 +46,16 @@ namespace BillControlService.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<BillControl>> GetBills()
+        public async Task<ActionResult<IEnumerable<BillControl>>> GetBills()
         {
             try
             {
-                var bills = _serviceData.GetAllAsync();
-                return await bills;
+                var bills = await _billHandler.GetBills();
+                return bills.ToList();
             }
             catch (Exception e)
             {
-                return (IEnumerable<BillControl>)NotFound(new { message = e.Message });
+                return NotFound(new { message = e.Message });
             }
         }
 
@@ -64,7 +66,7 @@ namespace BillControlService.Controllers
             {
                 if (TryValidateModel(bill))
                 {
-                    _serviceData.InsertOne(bill);
+                    _billHandler.InsertBill(bill);
                     return Ok(new { message = "Bill succesfully inserted" });
                 }
 
