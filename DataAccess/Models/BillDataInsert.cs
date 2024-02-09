@@ -1,24 +1,22 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace DataAccess.Models
 {
-    public class BillControl
+    public class BillData
     {
         public string Id { get; set; }
+
+        public string IdBill { get; set; }
 
         [Required]
         public string Name { get; set; }
 
-
         [Required]
-        public int PayDay { get; set; }
-        [Required]
+        public DateTime PayDate { get; set; }
 
         public string State { get; set; }
-        [Required]
 
         public string IdUser { get; set; }
-
-
     }
 }

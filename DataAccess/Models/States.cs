@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DataAccess.Models
+﻿namespace DataAccess.Models
 {
-     public enum States
+    public enum States
     {
         PAGO, PENDIENTE, ATRASADO
     }
